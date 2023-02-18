@@ -1,17 +1,35 @@
-let bgContainerElement = document.getElementById("bgContainer");
-let buttonElement = document.getElementById("button");
+let firstNumber = document.getElementById("firstNumber");
+let secondNumber = document.getElementById("secondNumber");
+let userInput = document.getElementById("userInput");
+let resultOfGame = document.getElementById("gameResult");
 
-let bgColorsArray = ["#e75d7c", "#b16cef", "#53cca4", "#efc84d", "#628ef0", "#184b73", "#883e7f", "#ed048b"];
+function restartButtonFunction() {
+    let firstRandomNumber = Math.random() * 100;
+    firstRandomNumber = Math.ceil(firstRandomNumber);
+    firstNumber.textContent = firstRandomNumber;
 
-bgContainerElement.style.backgroundColor = bgColorsArray[0];
+    let secondRandomNumber = Math.random() * 100;
+    secondRandomNumber = Math.ceil(secondRandomNumber);
+    secondNumber.textContent = secondRandomNumber;
 
-function onChangeBgColor() {
-    let numberOfBgColors = bgColorsArray.length;
-    let randomBgColorIndex = Math.ceil(Math.random() * numberOfBgColors);
+    resultOfGame.textContent = "";
+    userInput.value = "";
+}
 
-    if (randomBgColorIndex === numberOfBgColors) {
-        randomBgColorIndex = numberOfBgColors - 1;
+restartButtonFunction();
+
+function checkButtonFunction() {
+    let FirstRandomNumber = parseInt(firstNumber.textContent);
+    let secondRandomNumber = parseInt(secondNumber.textContent);
+    let input = parseInt(userInput.value);
+
+    let sumOfNumbers = FirstRandomNumber + secondRandomNumber;
+
+    if (sumOfNumbers === input) {
+        resultOfGame.textContent = "Congratulations! You got it right.";
+        resultOfGame.style.backgroundColor = "#028a0f";
+    } else {
+        resultOfGame.textContent = "Please Try Again!";
+        resultOfGame.style.backgroundColor = "#1e217c";
     }
-    let randomBgColor = bgColorsArray[randomBgColorIndex];
-    bgContainerElement.style.backgroundColor = randomBgColor;
 }
