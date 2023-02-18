@@ -1,35 +1,49 @@
-let firstNumber = document.getElementById("firstNumber");
-let secondNumber = document.getElementById("secondNumber");
-let userInput = document.getElementById("userInput");
-let resultOfGame = document.getElementById("gameResult");
+let color_input = document.getElementById('bgColorInput');
 
-function restartButtonFunction() {
-    let firstRandomNumber = Math.random() * 100;
-    firstRandomNumber = Math.ceil(firstRandomNumber);
-    firstNumber.textContent = firstRandomNumber;
+let font_input = document.getElementById('fontColorInput');
 
-    let secondRandomNumber = Math.random() * 100;
-    secondRandomNumber = Math.ceil(secondRandomNumber);
-    secondNumber.textContent = secondRandomNumber;
+let font_size = document.getElementById('fontSizeInput');
 
-    resultOfGame.textContent = "";
-    userInput.value = "";
-}
+let font_weight = document.getElementById('fontWeightInput');
 
-restartButtonFunction();
+let padding_input = document.getElementById('paddingInput');
 
-function checkButtonFunction() {
-    let FirstRandomNumber = parseInt(firstNumber.textContent);
-    let secondRandomNumber = parseInt(secondNumber.textContent);
-    let input = parseInt(userInput.value);
+let border_input = document.getElementById('borderRadiusInput');
 
-    let sumOfNumbers = FirstRandomNumber + secondRandomNumber;
+let my_button = document.getElementById("customButton");
 
-    if (sumOfNumbers === input) {
-        resultOfGame.textContent = "Congratulations! You got it right.";
-        resultOfGame.style.backgroundColor = "#028a0f";
-    } else {
-        resultOfGame.textContent = "Please Try Again!";
-        resultOfGame.style.backgroundColor = "#1e217c";
-    }
+
+
+
+
+
+
+function applly() {
+
+    let color_value = color_input.value;
+
+    let font_value = font_input.value;
+
+    let font_size_value = font_size.value;
+
+    let font_w_value = font_weight.value;
+
+    let padding_value = padding_input.value;
+
+    let border_value = border_input.value;
+
+
+
+    my_button.style.backgroundColor = color_value;
+
+    my_button.style.color = font_value;
+
+    my_button.style.fontSize = font_size_value;
+
+    my_button.style.fontWeight = font_w_value;
+
+    my_button.style.padding = padding_value;
+
+    my_button.style.borderRadius = border_value;
+
 }
