@@ -10,36 +10,34 @@
 </head>
 
 <body>
-    <div class="button-maker-bg-container p-4">
-        <h1 class="button-maker-heading text-center mb-4">Button Maker</h1>
-        <div class="button-maker-container bg-light pt-4 pb-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-7">
-                        <p class="input-label">BACKGROUND COLOR</p>
-                        <input id="bgColorInput" class="user-input" type="text" />
-                        <p class="input-label">FONT COLOR</p>
-                        <input class="user-input" type="text" id="fontColorInput" />
-                        <p class="input-label">FONT SIZE (in px)</p>
-                        <input class="user-input" type="text" id="fontSizeInput" />
-                        <p class="input-label">FONT WEIGHT</p>
-                        <input class="user-input" type="text" id="fontWeightInput" />
-                        <p class="input-label">PADDING (in px)</p>
-                        <input class="user-input" type="text" id="paddingInput" />
-                        <p class="input-label">BORDER RADIUS (in px)</p>
-                        <input class="user-input" type="text" id="borderRadiusInput" />
-                        <div class="text-right mt-4">
-                            <button id="applyButton" class="btn btn-primary" onclick="applly()">
-                                Apply
-                            </button>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <h3>Hello</h3>
+                <h1>Jane Doe</h1>
+                <div class="p-3 formContainer">
+                    <h1 class="cardHeading">Bookmark Your Favorite Sites</h1>
+                    <form class="boxContainer" id="bookmarkForm">
+                        <label for="siteNameInput">SITE NAME</label>
+                        <input class="form-control" placeholder="Enter site name" type="text" id="siteNameInput" />
+                        <p id="siteNameErrMsg"></p>
+                        <label for="siteUrlInput">SITE URL</label>
+                        <input class="form-control" placeholder="Enter site url" type="text" id="siteUrlInput" />
+                        <p id="siteUrlErrMsg"></p>
+                        <div class="text-right">
+                            <button class="button" id="submitBtn" type="submit">Submit</button>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-5 mt-4 text-center">
-                        <button class="custom-button" id="customButton">Custom Button</button>
+                    </form>
+                    <div class="mt-3 boxContainer">
+                        <ul class="d-none" id="bookmarksList">
+
+                        </ul>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 </body>
 
